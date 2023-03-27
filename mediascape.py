@@ -22,8 +22,8 @@ engine = create_engine(URL(
 source_file_loc = (r"C:\Work\BIA\MediaScape.csv")
 
 df = pd.read_csv(source_file_loc,encoding ='latin1')
-
-df.columns=['DOMAIN', 'COMPANY_NAME', 'B2B_CAMPAIGN_FLAG', 'CHANNEL', 'IMPRESSIONS', 'SPEND', 'PUBLISHER_CNT', 'FIRST_SEEN', 'LAST_SEEN']
+df.columns=['DOMAIN', 'CAMPAIGN_NAME', 'B2B_CAMPAIGN_FLAG', 'CHANNEL', 'IMPRESSIONS', 'SPEND', 'PUBLISHER_CNT', 'FIRST_SEEN', 'LAST_SEEN']
+df['SPEND'] = pd.to_numeric(df['SPEND'].str.replace('[^\d\.]', ''), errors='coerce')
 
 # insert df into snowflake
 # Note: Always use lower case letters as table name. No matter what
