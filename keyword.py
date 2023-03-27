@@ -16,7 +16,7 @@ engine = create_engine(URL(
     role='ACCOUNTADMIN'
 ))
 
-# read csv data from source file
+# read csv data from keyword source file
 
 source_file_loc = (r"C:\Work\BIA\Keyword.csv")
 
